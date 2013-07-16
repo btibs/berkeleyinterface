@@ -11,6 +11,8 @@ import sys
 import re
 import jpype
 
+# todo OO so can ask if started/initialized?
+
 def __outputTrees(parseTrees, outputData, parser, opts, line, sentenceID):
     '''
     Write tree information to outputData. This is a reimplementation of the
@@ -111,7 +113,7 @@ def dictToArgs(d):
     '''Convert a dict of options to a list of command-line-style args'''
     boolDefaults = [ "tokenize", "binarize", "scores", "keepFunctionLabels",
         "substates", "accurate", "modelScore", "confidence", "sentence_likelihood",
-        "tree_likelihood", "variational", "render", "chinese", "goldPOS",
+        "tree_likelihood", "variational", "render", "chinese", "useGoldPOS",
         "dumpPosteriors", "ec_format",
     ] # these all default to False and only require the switch if True
     
