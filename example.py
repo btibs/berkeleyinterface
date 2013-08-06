@@ -44,5 +44,16 @@ opts = getOpts(dictToArgs(args))
 # Parse again, with our modified options
 parseInput(parser, opts)
 
+# We can also take advantage of Python's built-in StringIO class,
+# which allows us to use strings like files
+from StringIO import StringIO
+strIn = StringIO("Hello, world!\nThe quick brown fox jumped over the lazy dogs.")
+strOut = StringIO()
+parseInput(parser, opts, outputFile=strOut)
+
+# Now we can retrieve the output as a string:
+result = strOut.getvalue()
+print "\nStringIO Result:\n",result
+
 # That's all, folks!
 shutdown()

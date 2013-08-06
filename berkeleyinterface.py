@@ -10,8 +10,7 @@ loading the grammar file each time (and without having to use Java!)
 import sys
 import re
 import jpype
-
-# todo OO so can ask if started/initialized?
+from StringIO import StringIO
 
 def __outputTrees(parseTrees, outputData, parser, opts, line, sentenceID):
     '''
@@ -197,22 +196,29 @@ def loadGrammar(opts):
     
     return parser
     # end loadGrammar
-
+    
 def parseInput(parser, opts, inputFile=None, outputFile=None):
     '''
     Uses parser with opts to parse the input file to output file.
     Optional arguments inputFile and outputFile overwrite values in opts.
+    If a StringIO object is used as output, it will not be closed.
     '''
     # initialize input/outputs
     inputData = sys.stdin
     if inputFile:
-        intputData = file(inputFile, 'r')
+        if isinstance(inputFile, StringIO):
+            inputData = inputFile
+        else:
+            inputData = file(inputFile, 'r')
     elif opts.inputFile:
         inputData = file(opts.inputFile, 'r')
     
     outputData = sys.stdout
     if outputFile:
-        outputData = file(outputFile, 'w')
+        if isinstance(outputFile, StringIO):
+            outputData = outputFile
+        else:
+            outputData = file(outputFile, 'w')
     elif opts.outputFile:
         outputData = file(opts.outputFile, 'w') 
     
@@ -309,7 +315,7 @@ def parseInput(parser, opts, inputFile=None, outputFile=None):
     '''close files'''
     inputData.close()
     outputData.flush()
-    if outputData != sys.stdout: # don't close stdout!
+    if outputData != sys.stdout and not isinstance(outputData, StringIO):
         outputData.close()
     #end parseInput
 
