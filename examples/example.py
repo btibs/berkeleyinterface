@@ -1,8 +1,23 @@
-'''
-Basic example demonstrating usage of the interface
-'''
+# pkg.mod
+# Basic example demonstrating usage of the interface
+#
+# Author:   Benjamin Bengfort <benjamin@bengfort.com>
+# Created:  Tue Jul 09 14:20:34 2013 -0400
+#
+# Copyright (C) 2014 Bengfort.com
+# For license information, see LICENSE.txt
+#
+# ID: example.py [] benjamin@bengfort.com $
 
-from berkeleyinterface import *
+"""
+Basic example demonstrating usage of the interface
+"""
+
+##########################################################################
+## Imports
+##########################################################################
+
+from BerkeleyInterface import *
 
 # This should be the path to the Berkeley Parser jar file
 cp = r'C:\berkeleyparser\BerkeleyParser-1.7.jar'

@@ -1,11 +1,30 @@
-'''
+# BerkeleyInterface.interactive
+# An interactive console to the Berkeley Parser
+#
+# Author:   Elizabeth McNany <beth@cs.umd.edu>
+# Created:  Tue Jul 16 16:40:22 2013 -0400
+#
+# Copyright (C) 2013 UMD Metacognitive Lab
+# For license information, see LICENSE.txt
+#
+# ID: interactive.py [] beth@cs.umd.edu $
+
+"""
 Basic example demonstrating usage of the interface: Interactive console version!
 User can enter utterances repeatedly and exit with ctrl-c
-'''
+"""
+
+##########################################################################
+## Imports
+##########################################################################
 
 from berkeleyinterface import *
 from StringIO import StringIO
 import sys
+
+##########################################################################
+## Main functionality
+##########################################################################
 
 # Allow entering a number for kbest parses to show when running
 kbest = 1
@@ -41,6 +60,6 @@ while True:
     except EOFError:
         print "\n\nGoodbye."
         break
-    
+
 # That's all, folks!
 shutdown()
