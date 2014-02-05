@@ -17,10 +17,15 @@ Basic example demonstrating usage of the interface
 ## Imports
 ##########################################################################
 
+import os
 from BerkeleyInterface import *
 
+JAR_PATH = r'C:\berkeleyparser\BerkeleyParser-1.7.jar'
+GRM_PATH = r'C:\berkeleyparser\eng_sm6.gr'
+
 # This should be the path to the Berkeley Parser jar file
-cp = r'C:\berkeleyparser\BerkeleyParser-1.7.jar'
+
+cp = os.environ.get("BERKELEY_PARSER_JAR", JAR_PATH)
 
 # Always start the JVM first!
 startup(cp)
@@ -29,7 +34,7 @@ startup(cp)
 # See the BerkeleyParser documentation for information on arguments
 # Notably: a grammar file ("gr") is required, and if inputFile / outputFile
 # are not given, it will default to stdin/stdout
-gr = r'C:\berkeleyparser\eng_sm6.gr'
+gr = os.environ.get("BERKELEY_PARSER_GRM", GRM_PATH)
 args = {"gr":gr, "tokenize":True, "inputFile":"testinput.txt"}
 
 # Convert args from a dict to the appropriate Java class

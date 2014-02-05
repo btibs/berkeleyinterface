@@ -1,4 +1,4 @@
-# Python interface to the Berkeley Parser [![Build Status][status_image]][travis_link] #
+# Python-Enabled Berkeley Parser [![Build Status][status_image]][travis_link] #
 
 [status_image]: https://travis-ci.org/mclumd/berkeleyinterface.png?branch=master
 [travis_link]: https://travis-ci.org/mclumd/berkeleyinterface
