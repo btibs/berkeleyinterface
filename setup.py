@@ -34,6 +34,7 @@ requires = []
 
 with open('requirements.txt', 'r') as reqfile:
     for line in reqfile:
+        if line.startswith('#'): continue
         requires.append(line.strip())
 
 classifiers = (
