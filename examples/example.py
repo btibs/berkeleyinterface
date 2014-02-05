@@ -1,13 +1,13 @@
-# pkg.mod
+# example
 # Basic example demonstrating usage of the interface
 #
-# Author:   Benjamin Bengfort <benjamin@bengfort.com>
+# Author:   Elizabeth McNany <beth@cs.umd.edu>
 # Created:  Tue Jul 09 14:20:34 2013 -0400
 #
-# Copyright (C) 2014 Bengfort.com
+# Copyright (C) 2013 UMD Metacognitive Lab
 # For license information, see LICENSE.txt
 #
-# ID: example.py [] benjamin@bengfort.com $
+# ID: example.py [] beth@cs.umd.edu $
 
 """
 Basic example demonstrating usage of the interface
