@@ -9,6 +9,15 @@ This has the advantage over other implementations which essentially automate a c
 
 See example.py for a short running demo of the interface.
 
+## Environment ##
+
+Note that this package requires the Berkeley Parser 1.6 or Berkeley Parser 1.7 JAR file (depending on your version of Java) as well as a grammar file. You can tell the Python module the location of these files via an ENVVAR:
+    
+    export BERKELEY_PARSER_JAR=/path/to/berkeley/parser.jar
+    export BERKELEY_PARSER_GRM=/path/toberkeley/english.gr
+
+Otherwise the default is currently set to C:\berkeleyparser\ for Windows systems. In the future we'll add a search path to perform lookups for sane places on OS X and Linux as well.
+
 ## Installation and Dependencies ##
 
 Although a package script has been setup to install the Python module, one dependency cannot currently be fulfilled by PyPi- the core bridge between Python and Java, JPype. The authors have submitted a support request to have JPype included into PyPi, but until that time, you'll have to download and install this dependency yourself.
