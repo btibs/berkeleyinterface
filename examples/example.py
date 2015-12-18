@@ -69,7 +69,7 @@ parseInput(parser, opts)
 from StringIO import StringIO
 strIn = StringIO("Hello, world!\nThe quick brown fox jumped over the lazy dogs.")
 strOut = StringIO()
-parseInput(parser, opts, outputFile=strOut)
+parseInput(parser, opts, inputFile=strIn, outputFile=strOut)
 
 # Now we can retrieve the output as a string:
 result = strOut.getvalue()
